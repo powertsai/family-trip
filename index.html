@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#214f40">
+<title>帶爸媽輕鬆玩｜20選8幸運轉盤</title>
+<style>
+:root{--green:#214f40;--forest:#14392f;--mint:#e9f2e9;--white:#fffefa;--ink:#26372c;--sub:#637369;--border:#dae5dc;--gold:#a56d32;--shadow:0 10px 34px rgba(24,62,44,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f5f7f1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;line-height:1.6}
+button,select{font-family:inherit}
+button{cursor:pointer}
+a{color:#236851}
+.page{max-width:1140px;margin:auto;padding:23px 22px 54px}
+.hero{background:linear-gradient(115deg,#193b32,#387a5a);border-radius:23px;padding:29px 35px;color:white;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:var(--shadow)}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#cce6d5;font-weight:800}
+h1{font-size:clamp(26px,3.1vw,39px);letter-spacing:.03em;line-height:1.24;margin:10px 0 12px;font-weight:850}
+.hero p{margin:0;color:#e3f0e7;font-size:14px}
+.hero-badge{border:1px solid #8cbaa6;color:#e9fff2;background:#ffffff16;border-radius:18px;padding:15px 20px;text-align:center;min-width:110px}
+.hero-badge strong{display:block;font-size:32px;line-height:1.1}.hero-badge span{font-size:12px}
+.controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:19px 0}
+.control{flex:1 1 180px;min-width:0}.control label{display:block;font-weight:760;font-size:13px;margin:0 0 5px}
+select{display:block;width:100%;border-radius:11px;padding:11px 12px;border:1px solid #c9dacb;background:white;color:var(--ink);font-size:14px}
+.link-muted{color:var(--sub);font-size:12px;padding:0 0 12px}
+.main{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:19px;align-items:start}
+.panel{border:1px solid var(--border);background:var(--white);border-radius:19px;box-shadow:var(--shadow);min-width:0;overflow:hidden}
+.wheelpanel{padding:19px 19px 22px;text-align:center}
+.panel-title{font-weight:840;font-size:17px;margin:0 0 8px}
+.wheel-wrap{width:min(100%,520px);aspect-ratio:1;margin:4px auto 7px;position:relative;display:grid;place-items:center}
+#wheel{display:block;width:100%;aspect-ratio:1;border-radius:50%;filter:drop-shadow(0 4px 7px #1e4e3723);transition:transform 5s cubic-bezier(.13,.8,.15,1)}
+.pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);z-index:2;width:0;height:0;border-left:17px solid transparent;border-right:17px solid transparent;border-top:31px solid #ad712d;filter:drop-shadow(0 2px 3px #0004)}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;width:24%;aspect-ratio:1;display:grid;place-items:center;background:#fff8e6;border:5px solid var(--green);color:var(--green);font-size:clamp(12px,2vw,20px);line-height:1.23;font-weight:900;pointer-events:none;box-shadow:0 3px 11px #0002}
+.spin-btn{border:0;border-radius:40px;padding:15px 23px;background:var(--green);color:white;font-weight:850;font-size:17px;box-shadow:0 4px 0 #0d3426;width:min(100%,350px);margin:10px auto 0}
+.spin-btn:hover:not(:disabled){background:#31745a}.spin-btn:active:not(:disabled){transform:translateY(2px);box-shadow:0 2px 0 #0d3426}.spin-btn:disabled{opacity:.66;cursor:wait}
+.count{font-size:12px;color:var(--sub);margin-top:13px}
+.result{min-height:500px}
+.blank{height:100%;min-height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:27px 34px}
+.blank-icon{font-size:58px}.blank h2{font-size:23px;margin:12px 0 5px}.blank p{font-size:14px;color:var(--sub);max-width:315px;margin:6px 0}
+.detail-head{padding:23px 23px 18px;background:linear-gradient(135deg,#f1f6ed,#fffdf6);border-bottom:1px solid var(--border)}
+.tiny{color:#65796a;font-size:12px;font-weight:780;letter-spacing:.04em}
+.detail-head h2{font-size:26px;line-height:1.3;margin:7px 0 3px}.detail-head p{font-size:13px;color:#647467;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0 0}.tag{font-size:12px;padding:5px 9px;border-radius:30px;background:white;border:1px solid #d6e5d5;font-weight:650}
+.detail-body{padding:17px 22px 21px}
+h3{font-size:16px;margin:12px 0 7px}.description{font-size:14px;line-height:1.78;margin:0 0 12px}
+.advice{border-left:4px solid #6ea184;border-radius:6px;background:#f1f7f0;padding:11px 13px;font-size:13px;line-height:1.75}.advice.caution{border-color:var(--gold);background:#fff7e9}
+.advice strong{display:block;margin-bottom:2px}
+.place-link{display:inline-flex;gap:6px;align-items:center;border:1px solid #66977b;border-radius:9px;padding:9px 12px;font-size:13px;font-weight:780;text-decoration:none;margin:14px 0 5px;background:#f7fbf7}.place-link:hover{background:#e8f4e9}
+.food-heading{border-top:1px solid var(--border);padding-top:14px;margin:13px 0 2px}
+.food{border-bottom:1px solid #e8eee7;padding:12px 0;display:flex;align-items:start;justify-content:space-between;gap:12px}.food:last-child{border-bottom:0}
+.food-name{font-size:14px;font-weight:830}.food-info{font-size:12px;color:var(--sub);line-height:1.6;margin-top:3px}.food a{flex-shrink:0;font-size:12px;font-weight:780;padding:4px 0;text-underline-offset:3px}
+.library{margin-top:20px}.library summary{font-weight:820;cursor:pointer;padding:15px 20px;background:#eaf1e8;border-bottom:1px solid var(--border)}.library-wrap{padding:16px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.place-card{min-width:0;border:1px solid var(--border);border-radius:10px;padding:10px 6px;background:#fff;text-align:center;color:var(--ink);font-size:13px;line-height:1.4;font-weight:750;min-height:68px}
+.place-card:hover,.place-card:focus-visible{border-color:#4b8b68;background:#f0f7ec;outline-offset:2px}.place-card small{display:block;font-size:10px;color:var(--sub);margin-top:4px;font-weight:500}
+.info{margin:18px 0 0;color:#647268;font-size:12px;line-height:1.7;padding:0 2px}
+.foot{font-size:11px;color:#819086;margin-top:7px}
+
+/* STEP 1: eight-destination curated selection */
+.selection-panel{margin:7px 0 19px;padding:0}
+.selection-header{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:21px 23px 10px;flex-wrap:wrap}
+.selection-header .step{font-size:11px;letter-spacing:.13em;font-weight:850;color:#4c8166}
+.selection-header h2{font-size:20px;line-height:1.38;margin:4px 0 5px}
+.selection-header p{font-size:13px;color:var(--sub);margin:0}
+.selection-actions{display:flex;gap:7px;flex-wrap:wrap}
+.mini-btn{border:1px solid #2b654c;border-radius:10px;padding:9px 12px;font-weight:780;font-size:13px;line-height:1.4}
+.mini-btn.solid{background:#285e48;color:#fff}.mini-btn.outline{background:white;color:#285e48}
+.mini-btn:hover{filter:brightness(.94)}.mini-btn:disabled{opacity:.45;cursor:wait}
+.selection-progress{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:3px 23px 9px;font-size:12px;color:var(--sub)}
+.selection-progress strong{font-size:14px;color:#275f46}
+.selected-chips{display:flex;gap:8px;flex-wrap:wrap;padding:3px 22px 19px}
+.selected-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid #9fbfa7;background:#edf5eb;color:#244c37;border-radius:50px;padding:8px 8px 8px 13px;white-space:nowrap;font-size:13px;font-weight:760}
+.selected-chip:hover{background:#daeadd;border-color:#629c79}.selected-chip span{font-size:16px;line-height:1;color:#7a8d7b}
+.chooser{border-top:1px solid #dbe7dc}.chooser summary{cursor:pointer;background:#f0f5ed;color:#275540;font-weight:800;padding:13px 22px;font-size:14px}
+.chooser-inner{padding:13px 21px 19px}.chooser-inner p{font-size:12px;color:var(--sub);margin:0 0 11px}
+.place-card.selected{background:#dcebdd;border:2px solid #418360;color:#17472e;box-shadow:0 0 0 1px #b2ceb5 inset}
+.place-card.selected small{color:#225a40}.place-card{position:relative}
+.place-card .tick{position:absolute;right:5px;top:4px;font-size:13px;color:#225a40;font-weight:900}
+@media(max-width:530px){.selection-header{padding:16px 14px 9px}.selection-header h2{font-size:17px}.selection-actions{width:100%;display:grid;grid-template-columns:1fr 1fr}.selection-progress{padding:4px 14px 10px}.selected-chips{padding:3px 12px 15px;gap:6px}.selected-chip{font-size:12px;padding:7px 8px}.chooser summary{padding:12px 14px}.chooser-inner{padding:12px}.place-card{min-height:58px}}
+
+@media(max-width:790px){.main{grid-template-columns:1fr}.wheel-wrap{max-width:410px}.result,.blank{min-height:270px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:530px){.page{padding:11px 12px 32px}.hero{padding:19px 17px;border-radius:16px}.hero-badge{min-width:75px;padding:12px 8px}.hero-badge strong{font-size:24px}.hero-badge span{font-size:10px}.wheelpanel{padding:15px 12px 19px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-head{padding:18px}.detail-body{padding:14px 17px}h1{font-size:25px}.spin-btn{font-size:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#wheel{transition-duration:.5s}}
+@media print{.controls,.spin-btn,.library{display:none!important}.main{grid-template-columns:1fr}#wheel{max-width:240px}.result,.blank{min-height:0}body{background:white}.hero{color:#fff;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero"><div><div class="kicker">FAMILY DAY · TAIPEI & NEW TAIPEI</div><h1>🌿 今天帶爸媽去哪玩？</h1><p>從 20 個雙北輕旅行景點，先選 8 個，再幸運轉盤抽出今天的行程。</p></div><div class="hero-badge"><strong>20 ➜ 8</strong><span>精選轉盤</span></div></header>
+<section class="controls" aria-label="景點抽選設定"><div class="control"><label for="area">景點範圍</label><select id="area"><option value="all">雙北全部 20 處</option><option value="taipei">僅臺北市 17 處</option><option value="newtaipei">僅新北市 3 處</option></select></div><div class="control"><label for="walk">爸媽步行需求</label><select id="walk"><option value="all">全部景點（含注意事項）</option><option value="easy">只抽平坦、少階梯景點</option></select></div><div class="link-muted">🟢 平坦優先　🟠 建議選短程平緩路線</div></section>
+<section class="panel selection-panel" aria-label="第一步：選出八個景點">
+  <div class="selection-header">
+    <div><span class="step">STEP 01 · 挑選景點</span><h2>先從 20 個景點選出 8 個</h2><p>已先幫你挑好 8 個較友善的路線；可自由更換，也能一鍵隨機重選。</p></div>
+    <div class="selection-actions"><button type="button" class="mini-btn outline" id="suggest8">🌿 推薦 8 個</button><button type="button" class="mini-btn solid" id="random8">🎲 隨機選 8 個</button></div>
+  </div>
+  <div class="selection-progress"><strong id="select-count">8 / 8 已選</strong><span id="select-status" role="status" aria-live="polite">準備就緒，可以轉盤！</span></div>
+  <div id="selected-chips" class="selected-chips" aria-label="已選的景點"></div>
+  <details class="chooser" id="chooser"><summary>✏️ 展開 20 個景點，自行勾選或更換</summary><div class="chooser-inner"><p>點一下景點即可選取／取消。最多選 8 個；若已選滿，先取消 1 個再更換。</p><div class="grid" id="list"></div></div></details>
+</section>
+<section class="main" aria-label="轉盤及抽選結果"><div class="panel wheelpanel"><h2 class="panel-title">STEP 02 · 🎡 8 景點幸運轉盤</h2><div class="wheel-wrap"><div class="pointer" aria-hidden="true"></div><canvas id="wheel" width="800" height="800" role="img" aria-label="可隨機抽選旅遊景點的轉盤"></canvas><div class="wheel-hub">爸媽<br>慢慢玩</div></div><button class="spin-btn" id="spin" type="button">✦ 轉轉今天的好去處</button><div class="count" id="count" aria-live="polite">目前 8 個候選景點</div></div><div class="panel result" id="result" aria-live="polite"><div class="blank"><div class="blank-icon">🍃</div><h2>下一站，去哪玩？</h2><p>按下轉盤就能隨機抽出景點。</p><p>抽中後會顯示步行提醒、景點介紹及附近三家餐廳的 Google Maps 連結。</p></div></div></section>
+
+<div class="info">💡 第一階段從符合篩選條件的景點選 8 個，第二階段轉盤只顯示這 8 個。篩選只選「新北市」時，因候選僅 3 處，會顯示 3 格。若爸媽膝蓋不舒服，可選「只抽平坦、少階梯景點」。餐廳涵蓋步行或開車可到的選項，請依介紹安排交通。</div>
+<div class="foot">本 HTML 不需網路即可操作轉盤；點選 Google Maps 時需要連線。景點開放、施工、餐廳營業及訂位狀況可能變動，出發前請於地圖或官方網站確認。製作日期：2026-10-18。</div>
+</main>
+<script>
+'use strict';
+const places = [{"name":"臺北植物園","short":"植物園","city":"臺北市","district":"中正區","kind":"綠蔭賞花","minutes":"40–70 分鐘","level":1,"description":"老樹、荷花池與多樣植物，市中心就能享受綠蔭。沿主步道緩慢走，隨時都能坐下來休息。","advice":"由南海路入口選擇平坦主步道，避開樹根隆起或狹窄地面。","restaurants":[["合歡刀削麵館","南門市場內的麵食，適合喜歡傳統口味的長輩。","合歡刀削麵館 南門市場"],["金峰魯肉飯","滷肉飯與湯品，屬人氣臺式小吃，尖峰時間可能排隊。","金峰魯肉飯 中正區"],["福井麵疙瘩","寧波西街一帶的湯麵與麵疙瘩。","福井麵疙瘩 寧波西街"]]},{"name":"中正紀念堂","short":"中正堂","city":"臺北市","district":"中正區","kind":"文化廣場","minutes":"40–70 分鐘","level":1,"description":"寬闊廣場、園林與花圃，很適合欣賞建築及安排短程散步。","advice":"走自由廣場與花園平面動線，避免大型階梯；入館前確認電梯與開放資訊。","restaurants":[["詩篇咖啡餐廳","紀念堂內可休息用餐的咖啡餐飲空間。","詩篇咖啡餐廳 中正紀念堂"],["晴天廚房","寧波東街附近的日式咖哩餐點。","晴天廚房 寧波東街"],["金峰魯肉飯","臺式家常小吃，適合簡單用餐。","金峰魯肉飯 羅斯福路"]]},{"name":"南港公園","short":"南港公園","city":"臺北市","district":"南港區","kind":"湖景公園","minutes":"40–60 分鐘","level":1,"description":"水塘、亭台與水鳥，園區綠意充足，很適合慢走看水景。","advice":"以湖畔的平緩主路線為主，不往上延伸至山坡步道。","restaurants":[["昆陽牛肉麵","南港昆陽一帶可享用熱湯麵。","昆陽牛肉麵 南港"],["好想見麵 昆陽店","水餃、雲吞與麵食選擇。","好想見麵 昆陽店"],["瀧厚炙燒熟成牛排 南港店","牛排與套餐；位於南港車站商圈，需另行移動。","瀧厚炙燒熟成牛排 南港店"]]},{"name":"故宮至善園","short":"至善園","city":"臺北市","district":"士林區","kind":"古典園林","minutes":"30–60 分鐘","level":2,"description":"園林亭台、池塘和傳統造景，能悠閒賞景、拍照，適合喜愛文化景點的爸媽。","advice":"部分橋面與小徑有局部階梯，走入口附近較平緩區域即可。","restaurants":[["故宮晶華","故宮園區內中式餐飲及點心，適合家庭聚餐。","故宮晶華"],["三希堂人文空間","故宮館內茶點與輕食，請先確認館內開放。","三希堂人文空間 故宮"],["萬麗軒","士林萬麗酒店內中菜餐廳，需短程移動。","萬麗軒 士林萬麗酒店"]]},{"name":"翠山步道","short":"翠山步道","city":"臺北市","district":"士林區","kind":"森林步道","minutes":"30–60 分鐘","level":2,"description":"內雙溪山區林蔭、鳥鳴與森林景致，適合選擇入口短程體驗自然。","advice":"從中社路二段入口短程折返，避免串接長距離登山路線；出發前確認有無封閉、濕滑或整修。","restaurants":[["故宮晶華","中式合菜，走完山林路線可開車至故宮用餐。","故宮晶華 士林"],["萬麗軒","士林酒店中菜，適合舒適聚餐，需開車。","萬麗軒 士林"],["仕紳品麵 士林店","士林一帶麵食，回程可安排，需開車。","仕紳品麵 士林店"]]},{"name":"關渡自然公園","short":"關渡濕地","city":"臺北市","district":"北投區","kind":"賞鳥濕地","minutes":"60–90 分鐘","level":1,"description":"能觀賞濕地水鳥與河口生態，自然中心提供觀景與休憩空間。","advice":"優先走自然中心與友善通道，雨後戶外步道可能濕滑；留意休園日與門票。","restaurants":[["好窩室咖啡","自然中心內的咖啡及簡餐空間，可結合賞景。","好窩室咖啡 關渡自然公園"],["日村涮涮鍋","關渡商圈日式火鍋，適合多人用餐。","日村涮涮鍋 關渡"],["水鳥公園52號","關渡一帶餐飲空間，可安排正餐，需確認交通方式。","水鳥公園52號 北投"]]},{"name":"內洞國家森林遊樂區","short":"內洞瀑布","city":"新北市","district":"烏來區","kind":"瀑布森林","minutes":"90–150 分鐘","level":2,"description":"沿溪欣賞山林與瀑布，空氣清新。適合想走進森林又不想攀爬山路的家庭。","advice":"僅走較平緩的觀瀑步道，單程約 1 公里、來回約 2 公里，別接較陡的山林步道。","restaurants":[["加納富 內洞美食","內洞與信賢周邊家常料理，請確認當日營業。","加納富 內洞美食 烏來"],["泰雅巴萊原住民美食店","烏來老街原住民特色料理；需開車前往。","泰雅巴萊 烏來老街"],["老街野菜屋","烏來野菜、家常熱炒；需開車前往。","老街野菜屋 烏來"]]},{"name":"廣興河濱步道","short":"廣興河濱","city":"新北市","district":"新店區","kind":"溪岸風景","minutes":"30–60 分鐘","level":2,"description":"河岸濕地、山水風景，適合挑選容易抵達的路段短程散步。","advice":"選平整河濱區域，別往卵石灘或觀景坡道走；餐飲多須開車回新店市區。","restaurants":[["碧水堂 碧潭店","碧潭景觀餐飲，須開車移動。","碧水堂 碧潭店"],["水灣餐廳 碧潭店","水岸景觀餐廳，適合午餐或下午茶，須開車。","水灣餐廳 Waterfront 碧潭"],["珍有福 新店碧潭店","日式洋食與套餐，須開車至碧潭。","珍有福 新店碧潭店"]]},{"name":"中和四號公園","short":"四號公園","city":"新北市","district":"中和區","kind":"都會綠地","minutes":"40–70 分鐘","level":1,"description":"又稱八二三紀念公園，綠樹與林蔭步道寬闊，旁有國立臺灣圖書館。","advice":"以公園主步道為主，累了可到周邊室內空間休息。","restaurants":[["布納咖啡館 中和公園館","早午餐、義大利麵、排餐等，適合家庭聚會。","布納咖啡館 中和公園館"],["大魔大滿足鍋物 四號公園店","鍋物正餐，適合家人同桌慢慢用餐。","大魔大滿足鍋物 四號公園"],["Parco義大利麵 中和店","義大利麵與披薩等選擇。","Parco 義大利麵 中和店"]]},{"name":"大安森林公園","short":"大安森林","city":"臺北市","district":"大安區","kind":"生態公園","minutes":"45–75 分鐘","level":1,"description":"綠地、生態池、水鳥和大量座椅，讓爸媽可依體力自由調整散步距離。","advice":"挑選生態池附近主要平路，不必走完整個園區。","restaurants":[["穗川小農鍋物","以蔬菜與鍋物為主，適合想吃清爽熱食的人。","穗川小農鍋物 大安"],["兔Dreams","早午餐與咖啡，適合下午坐下休息。","兔Dreams 大安森林公園"],["魚韻日式料理","瑞安街周邊日式魚料理及定食。","魚韻日式料理 瑞安街"]]},{"name":"士林官邸公園","short":"士林官邸","city":"臺北市","district":"士林區","kind":"花園賞景","minutes":"45–75 分鐘","level":1,"description":"花圃、玫瑰園和老樹，適合拍照與賞花，是長輩慢遊的經典景點。","advice":"優先走官邸公園的平坦園路；正館開放與入館規定請另確認。","restaurants":[["仕紳品麵 士林店","麵食套餐，適合輕鬆用餐。","仕紳品麵 士林店"],["味擂家日式料理 士林店","日式料理與定食。","味擂家 士林店"],["吉豚屋 士林店","日式豬排定食與簡單套餐。","吉豚屋 士林店"]]},{"name":"大湖公園","short":"大湖公園","city":"臺北市","district":"內湖區","kind":"湖景公園","minutes":"40–70 分鐘","level":1,"description":"湖水、錦帶橋、山景與落羽松，適合輕鬆散步和觀察水鳥。","advice":"走捷運站到湖畔的主要平路，避開山坡和濕滑近水處。","restaurants":[["饗趣31義式景觀餐廳","義式料理，適合安排湖景散步後的午餐。","饗趣31義式景觀餐廳"],["樂湖 Le lakeshore","大湖山莊街一帶餐飲空間，請確認營業資訊。","樂湖 Le lakeshore 內湖"],["天町燒肉屋 大湖店","日式燒肉與家庭聚餐選擇。","天町燒肉屋 大湖店"]]},{"name":"碧湖公園","short":"碧湖公園","city":"臺北市","district":"內湖區","kind":"湖畔慢遊","minutes":"40–60 分鐘","level":1,"description":"市區裡寧靜的湖畔步道，可賞景、吹風、拍照或坐著聊天。","advice":"走環湖主步道，不接需要爬坡的登山路徑。","restaurants":[["象園咖啡 內湖店","家庭型景觀咖啡餐廳，有義大利麵、早午餐。","象園咖啡 內湖店"],["大湖餐館","臺式家常熱炒與合菜，適合多人分享。","大湖餐館 內湖路二段"],["米粒","內湖路二段一帶用餐與咖啡選擇，請先查營業。","米粒 內湖路二段"]]},{"name":"花博新生公園／玫瑰園","short":"玫瑰園","city":"臺北市","district":"中山區","kind":"玫瑰賞花","minutes":"40–70 分鐘","level":1,"description":"花園與草地、玫瑰品種豐富，適合慢慢拍照，也可以順遊林安泰古厝附近。","advice":"花況隨季節變化，避開正午太陽較強時段。","restaurants":[["京品私房料理","新生北路周邊的蔬食料理選擇。","京品私房料理 新生北路"],["上引水產","海鮮與熟食熱門場所，可能排隊、環境較熱鬧。","上引水產 台北"],["天使生活館","花博新生公園附近的餐飲休憩選擇。","天使生活館 濱江街"]]},{"name":"北投公園","short":"北投公園","city":"臺北市","district":"北投區","kind":"溫泉綠地","minutes":"40–70 分鐘","level":2,"description":"樹蔭、北投圖書館與溫泉小鎮氛圍，適合散步後喝茶休息。","advice":"以圖書館與公園主路為主，部分溫泉溪路段有坡度和階梯。","restaurants":[["三燔北投","飯店內日式火鍋／壽喜燒，適合家庭午餐。","三燔北投"],["水美食府","北投溫泉區飯店中式餐飲。","水美食府 北投"],["山邊咖啡","可安排輕食飲品與下午茶。","山邊咖啡 北投"]]},{"name":"松山文創園區","short":"松山文創","city":"臺北市","district":"信義區","kind":"文創園林","minutes":"45–75 分鐘","level":1,"description":"菸廠古蹟、生態池、商店與展覽，適合走走看看、喝咖啡。","advice":"選戶外平坦路線，舊建築入口可能有門檻，展館依狀況安排。","restaurants":[["gonnaPLUS","地中海風格料理，主打蔬菜與原型食材。","gonnaPLUS 松山文創園區"],["成真咖啡 誠品松菸店","咖啡、輕食與甜點，適合下午休息。","成真咖啡 松菸店"],["11 Cafe","松菸周邊早午餐與西式餐點。","11 Cafe 信義區"]]},{"name":"華山1914文創園區","short":"華山文創","city":"臺北市","district":"中正區","kind":"藝文慢遊","minutes":"45–75 分鐘","level":1,"description":"舊酒廠建築、展覽、商店與戶外空間，步行與用餐都方便。","advice":"主通道較平坦，某些歷史建築有門檻，可選無障礙出入口。","restaurants":[["Charles' Kitchen 華山","園區內早午餐與餐點，請確認營業資訊。","Charles Kitchen 華山"],["Alleycat's Pizza 華山","披薩與義式料理，適合大家分享。","Alleycats Pizza 華山"],["小器食堂 華山","日式家常洋食與定食。","小器食堂 華山"]]},{"name":"國父紀念館戶外園區","short":"中山公園","city":"臺北市","district":"信義區","kind":"文化綠地","minutes":"30–50 分鐘","level":1,"description":"中山文化園區的樹蔭、草坪與都市景觀，適合短距離走走。","advice":"主館整修期間以戶外園區為主，依現場圍籬選擇開放路段。","restaurants":[["筷子餐廳","光復南路中式合菜，適合家人分享。","筷子餐廳 光復南路"],["阿叔燒肉 台北店","大巨蛋周邊日式燒肉，需先確認營業。","阿叔燒肉 台北店"],["尚癮正宗成都串串香","麻辣串串與鍋物，較適合能吃辣的家人。","尚癮正宗成都串串香"]]},{"name":"榮星花園公園","short":"榮星花園","city":"臺北市","district":"中山區","kind":"社區綠地","minutes":"40–60 分鐘","level":1,"description":"大樹、綠地、生態池和座椅，適合放鬆走走或只是坐著聊天。","advice":"沿主要環園道路散步即可，靠近水邊要注意地面。","restaurants":[["赤木鮮魚店","五常街周邊的日式魚料理與定食。","赤木鮮魚店 五常街"],["壽司郎 台北民權建國店","迴轉壽司，餐點選擇多。","壽司郎 台北民權建國店"],["memo café","合江街周邊早午餐與咖啡。","memo cafe 合江街"]]},{"name":"美堤河濱公園","short":"美堤河濱","city":"臺北市","district":"中山區","kind":"河畔草地","minutes":"30–60 分鐘","level":1,"description":"基隆河岸草地與城市天際線，適合午後散步、看夕陽。","advice":"河濱步道平坦但遮蔭較少，天熱縮短行程，餐廳建議至大直商圈。","restaurants":[["朱記餡餅粥店 大直美麗華","餡餅、粥品等中式麵食，需到大直商場。","朱記餡餅粥 大直美麗華"],["八色烤肉mini 大直美麗華","韓式燒肉餐點，需到大直商場。","八色烤肉mini 大直美麗華"],["鴨覓烤鴨餐廳 大直美麗華","烤鴨及中式合菜，適合分享，需到大直商場。","鴨覓烤鴨 大直美麗華"]]}];
+const $=id=>document.getElementById(id);
+const wheel=$('wheel'),ctx=wheel.getContext('2d'),btn=$('spin'),result=$('result'),count=$('count'),list=$('list'),area=$('area'),walk=$('walk');
+const chips=$('selected-chips'),selectionCount=$('select-count'),status=$('select-status'),suggestBtn=$('suggest8'),randomBtn=$('random8');
+let available=places.slice(),active=[],chosenIds=new Set(),rot=0,isSpinning=false;
+// Flat or mostly flat routes, from different districts.
+const suggestedIds=[0,1,2,5,8,9,10,11];
+const colors=['#8eb69a','#dfead3','#b8d8b9','#f3e9cb','#aed0c0','#cee0c6','#f0e4cf','#92bfae'];
+const escapeHTML=v=>String(v).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const mapURL=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+const maxChoices=()=>Math.min(8,available.length);
+function drawWheel(){
+ const n=active.length,center=400,radius=386;
+ ctx.clearRect(0,0,800,800);
+ if(!n){ctx.font='bold 30px system-ui';ctx.textAlign='center';ctx.fillStyle='#46795e';ctx.fillText('請先選擇景點',400,390);return;}
+ const arc=2*Math.PI/n;
+ active.forEach((p,i)=>{
+  const a=-Math.PI/2+i*arc,b=a+arc,mid=(a+b)/2;
+  ctx.beginPath();ctx.moveTo(center,center);ctx.arc(center,center,radius,a,b);ctx.closePath();ctx.fillStyle=colors[i%colors.length];ctx.fill();ctx.strokeStyle='#ffffff';ctx.lineWidth=3;ctx.stroke();
+  const tx=center+Math.cos(mid)*radius*.71,ty=center+Math.sin(mid)*radius*.71;
+  ctx.save();ctx.translate(tx,ty);let angle=mid+Math.PI/2;
+  if(angle>Math.PI/2&&angle<Math.PI*1.5)angle-=Math.PI;
+  ctx.rotate(angle);ctx.fillStyle='#244536';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.font='850 '+(n<=8?33:24)+'px system-ui, sans-serif';ctx.fillText(p.short,0,0,n<=8?205:150);ctx.restore();
+ });
+ ctx.beginPath();ctx.arc(center,center,radius,0,2*Math.PI);ctx.strokeStyle='#245440';ctx.lineWidth=12;ctx.stroke();
+}
+function showPlace(p,isWinner){
+ const caution=p.level>1;
+ const foods=p.restaurants.map((f,i)=>`<div class="food"><div><div class="food-name">${i+1}. ${escapeHTML(f[0])}</div><div class="food-info">${escapeHTML(f[1])}</div></div><a href="${mapURL(f[2])}" target="_blank" rel="noopener noreferrer" aria-label="在 Google Maps 查看${escapeHTML(f[0])}">地圖 ↗</a></div>`).join('');
+ result.innerHTML=`<div class="detail-head"><div class="tiny">${isWinner?'🎉 今日幸運景點':'📍 景點介紹'} · ${escapeHTML(p.city)} ${escapeHTML(p.district)}</div><h2>${escapeHTML(p.name)}</h2><p>${escapeHTML(p.kind)}</p><div class="tags"><span class="tag">${caution?'🟠 選平緩短程':'🟢 平坦優先'}</span><span class="tag">⏱ ${escapeHTML(p.minutes)}</span></div></div><div class="detail-body"><h3>🌳 景點特色</h3><p class="description">${escapeHTML(p.description)}</p><div class="advice ${caution?'caution':''}"><strong>${caution?'⚠️ 長輩步行提醒':'✅ 長輩慢遊建議'}</strong>${escapeHTML(p.advice)}</div><a class="place-link" target="_blank" rel="noopener noreferrer" href="${mapURL(p.name+' '+p.city+p.district)}">📍 開啟景點 Google Maps ↗</a><h3 class="food-heading">🍽️ 周邊 3 家餐廳建議</h3>${foods}</div>`;
+ if(innerWidth<790)result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showBlank(){
+ result.innerHTML='<div class="blank"><div class="blank-icon">🍃</div><h2>下一站，去哪玩？</h2><p>從 20 個景點選好 8 個後，按下轉盤抽出目的地。</p><p>抽中後會出現步行提醒，以及附近 3 家餐廳與 Google Maps 連結。</p></div>';
+}
+function syncChoiceUI(message){
+ active=available.filter(p=>chosenIds.has(places.indexOf(p)));
+ const target=maxChoices();
+ const ready=target>0&&active.length===target;
+ selectionCount.textContent=`${active.length} / ${target} 已選`;
+ status.textContent=message||(target<8?`這個範圍只有 ${target} 處，轉盤會顯示 ${target} 格`:ready?'✅ 已選好，現在可以轉盤！':`再選 ${target-active.length} 個，才能開始轉盤`);
+ btn.disabled=isSpinning||!ready;
+ btn.textContent=ready?'✦ 轉轉今天的好去處':`請先選滿 ${target} 個景點`;
+ count.textContent=ready?`目前 ${active.length} 格清晰轉盤 · 每個景點中籤機率相同`:`已選 ${active.length} / ${target} 個景點 · 請先選滿`;
+ chips.innerHTML=active.map(p=>`<button type="button" class="selected-chip" data-remove="${places.indexOf(p)}" aria-label="移除 ${escapeHTML(p.name)}">${escapeHTML(p.short)}<span aria-hidden="true">×</span></button>`).join('')||'<span style="font-size:13px;color:#6d8172">尚未選擇景點</span>';
+ list.innerHTML=available.map(p=>{const id=places.indexOf(p),yes=chosenIds.has(id);return `<button type="button" class="place-card${yes?' selected':''}" aria-pressed="${yes}" data-index="${id}">${yes?'<span class="tick" aria-hidden="true">✓</span>':''}${escapeHTML(p.name)}<small>${p.city==='新北市'?'新北市 · ':''}${p.level===1?'🟢 平坦':'🟠 短程'}</small></button>`;}).join('');
+ wheel.style.transition='none';rot=0;wheel.style.transform='rotate(0deg)';void wheel.offsetWidth;wheel.style.transition='';
+ drawWheel();
+ showBlank();
+}
+function selectRecommended(){
+ if(isSpinning)return;
+ const preferred=[...suggestedIds,...places.map((_,i)=>i)];
+ const validIds=new Set(available.map(p=>places.indexOf(p)));
+ chosenIds=new Set(preferred.filter(id=>validIds.has(id)).slice(0,maxChoices()));
+ syncChoiceUI('🌿 已挑選適合長輩慢遊的景點');
+}
+function selectRandom(){
+ if(isSpinning)return;
+ const items=available.map(p=>places.indexOf(p));
+ for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}
+ chosenIds=new Set(items.slice(0,maxChoices()));
+ syncChoiceUI('🎲 已重新隨機挑選景點，可直接轉盤');
+}
+function refresh(){
+ available=places.filter(p=>(area.value==='all'||(area.value==='taipei'&&p.city==='臺北市')||(area.value==='newtaipei'&&p.city==='新北市'))&&(walk.value==='all'||p.level===1));
+ selectRecommended();
+}
+function toggleChoice(id){
+ if(isSpinning)return;
+ if(chosenIds.has(id)){chosenIds.delete(id);syncChoiceUI();return;}
+ if(chosenIds.size>=maxChoices()){
+  status.textContent=`已選滿 ${maxChoices()} 個！請先移除一個再選新的。`;
+  return;
+ }
+ chosenIds.add(id);syncChoiceUI();
+}
+function spin(){
+ if(isSpinning||active.length!==maxChoices()||!active.length)return;
+ isSpinning=true;btn.disabled=true;btn.textContent='🍀 幸運轉動中…';suggestBtn.disabled=true;randomBtn.disabled=true;
+ const idx=Math.floor(Math.random()*active.length),chosen=active[idx];
+ const target=((360-(idx+.5)*360/active.length)%360+360)%360;
+ const extra=(target-(rot%360)+360)%360;
+ rot+=360*6+extra;
+ wheel.style.transition='transform 5s cubic-bezier(.13,.8,.15,1)';
+ requestAnimationFrame(()=>{wheel.style.transform=`rotate(${rot}deg)`});
+ let finished=false;
+ const done=()=>{if(finished)return;finished=true;isSpinning=false;btn.disabled=false;suggestBtn.disabled=false;randomBtn.disabled=false;btn.textContent='↻ 再轉一次，換個景點';showPlace(chosen,true)};
+ wheel.addEventListener('transitionend',e=>{if(e.propertyName==='transform')done()},{once:true});
+ setTimeout(done,5500);
+}
+btn.addEventListener('click',spin);
+suggestBtn.addEventListener('click',selectRecommended);
+randomBtn.addEventListener('click',selectRandom);
+area.addEventListener('change',()=>{if(!isSpinning)refresh()});
+walk.addEventListener('change',()=>{if(!isSpinning)refresh()});
+list.addEventListener('click',e=>{const b=e.target.closest('button[data-index]');if(b)toggleChoice(Number(b.dataset.index))});
+chips.addEventListener('click',e=>{const b=e.target.closest('button[data-remove]');if(b)toggleChoice(Number(b.dataset.remove))});
+refresh();
+</script>
+</body></html>
